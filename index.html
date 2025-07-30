@@ -1,17 +1,17 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title> Virtual Card</title>
-  <link rel="stylesheet" href="style.css".css">
+  <title>Virtual Card</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet"/>
   <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-  
+  <style>
+    c
+  </style>
 </head>
 <body>
-  <div class="card-wrapper">
+  <div class="card-wrapper" id="cardWrapper">
     <div class="section left">
       <img src="Aadhaar.png" alt="Aadhaar" class="profile-img" />
       <h2>AADHAAR</h2>
@@ -35,5 +35,16 @@
       </a>
     </div>
   </div>
+
+  <script>
+    // For mobile: reveal on first touch/click
+    const card = document.getElementById('cardWrapper');
+    card.addEventListener('click', function () {
+      // If not already revealed
+      if (!card.classList.contains('revealed')) {
+        card.classList.add('revealed');
+      }
+    });
+  </script>
 </body>
 </html>
