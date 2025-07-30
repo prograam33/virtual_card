@@ -1,121 +1,66 @@
-* {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
 
-    body {
-      font-family: 'Inter', sans-serif;
-      background: radial-gradient(circle at top left, #f0f4f8, #dbeafe);
-      min-height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 20px;
-    }
-
-    .card-wrapper {
-      width: 100%;
-      max-width: 800px;
-      height: 450px;
-      border-radius: 20px;
-      overflow: hidden;
-      position: relative;
-      box-shadow: 0 10px 40px rgba(0,0,0,0.15);
-      background: url('IMG_20250728_155128.jpg') center/cover no-repeat;
-      transition: background 0.6s ease-in-out;
-    }
-
-    .card-wrapper.revealed {
-      background: #fff;
-    }
-
-    .section {
-      position: absolute;
-      width: 50%;
-      height: 100%;
-      top: 0;
-      padding: 20px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      opacity: 0;
-      transition: transform 0.5s ease, opacity 0.6s ease;
-    }
-
-    .left {
-      left: 0;
-      transform: translateX(-100%);
-      border-right: 1px solid #e5e7eb;
-    }
-
-    .right {
-      right: 0;
-      transform: translateX(100%);
-    }
-
-    /* Hover for desktop */
-    .card-wrapper:hover .left,
-    .card-wrapper:hover .right,
-    .card-wrapper.revealed .left,
-    .card-wrapper.revealed .right {
-      transform: translateX(0);
-      opacity: 1;
-    }
-
-    .profile-img {
-      width: 120px;
-      height: 120px;
-      border-radius: 50%;
-      object-fit: cover;
-      margin-bottom: 15px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    }
-
-    h2 {
-      font-size: 20px;
-      color: #1e293b;
-      margin-bottom: 8px;
-    }
-
-    h3 {
-      font-size: 14px;
-      color: #6b7280;
-      margin-bottom: 20px;
-    }
-
-    a {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      padding: 10px 15px;
-      margin: 6px 0;
-      border-radius: 8px;
-      font-size: 14px;
-      color: #fff;
-      text-decoration: none;
-      transition: transform 0.3s ease;
-    }
-
-    a i {
-      font-size: 16px;
-    }
-
-    a.whatsapp {
-      background-color: #25D366;
-    }
-
-    a.instagram {
-      background-color: #E1306C;
-    }
-
-    a:hover {
-      transform: scale(1.05);
-    }
-
-    @media (max-width: 768px) {
-      .card-wrapper {
-        cursor: pointer;
-      }
-    }
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background: #f3f4f6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.card-container {
+  position: relative;
+  width: 600px;
+  height: 350px;
+  border-radius: 16px;
+  overflow: hidden;
+  cursor: pointer;
+}
+.card-front {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity 0.4s ease;
+}
+.card-details {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+.card-container:hover .card-front {
+  opacity: 0;
+}
+.card-container:hover .card-details {
+  opacity: 1;
+}
+.left, .right {
+  width: 50%;
+  padding: 20px;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.left img, .right img {
+  width: 100px;
+  height: 100px;
+  border-radius: 12px;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+h2 {
+  margin: 8px 0 4px;
+  font-size: 18px;
+}
+p, a {
+  margin: 4px 0;
+  font-size: 14px;
+  color: #333;
+  text-decoration: none;
+}
